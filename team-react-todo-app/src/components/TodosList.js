@@ -8,9 +8,9 @@ const TodosList = ({todos}) => {
             style={{ 
                 display: "flex", 
                 flexDirection: "column",
-                width: "200px",
+                width: "400px",
                 margin: "0 auto",
-                height: "300px",
+                height: "100%",
                 overflowY: "auto",
                 overflowX: "hidden" 
             }}>
