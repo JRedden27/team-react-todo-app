@@ -1,28 +1,46 @@
 import React from "react";
 import { connect } from "react-redux";
 import { deleteTodo, editTodo } from "../redux/action/addTodo.action";
+import { Card } from 'react-bootstrap';
 
 const Todo = ({ todo, idx, deleteTodo, editTodo, selected, text }) => {
     return(
-        <div 
+        <Card 
             style={{ 
                 display: "flex",   
                 flexDirection: "row", 
                 justifyContent: "space-between", 
                 border: "1px solid #ffffffa6",
                 padding: "5px",
-                cursor: "pointer"
+                margin: "5px",
+                backgroundColor: "#ffffff",
+                color: "black",
+                borderRadius: "12.5px",
+                borderStyle: "solid",
+                borderColor: "green",
+                borderWidth: "5px",
+                width: "99%",
+                minHeight: "125px"
             }}
         >
-            <div onClick={() => editTodo(idx)}>
-                {
-                    selected === idx ?
-                    text
-                    :
-                    todo
-                }</div>
-            <div style={{ cursor: "pointer" }} onClick={() => deleteTodo(idx)} >x</div>
-        </div>
+            <Card.Body>
+                <Card.Title style={{ fontWeight: "800", fontSize: "18px" }}>To-Do:</Card.Title>
+                <Card.Text>
+                    {
+                        selected === idx ?
+                        text
+                        :
+                        todo
+                    }
+                </Card.Text>
+            </Card.Body>
+            <div style={{ margin: "10px 5px" }}>
+                <i class="bi bi-check-lg" style={{ cursor: "pointer", display: "block" }} ></i>
+                <i class="bi bi-exclamation-circle-fill" style={{ cursor: "pointer", display: "block" }} ></i>
+                <i class="bi bi-pencil-fill" style={{ cursor: "pointer", display: "block" }} onClick={() => editTodo(idx)}></i>
+                <i class="bi bi-trash-fill" style={{ cursor: "pointer", display: "block" }} onClick={() => deleteTodo(idx)} ></i>
+            </div>
+        </Card>
     )
 };
 

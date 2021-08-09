@@ -1,9 +1,11 @@
 import React, { useEffect } from "react";
 import "./styles.css";
+import Header from "./components/Header";
 import InputField from "./components/InputField";
 import TodosList from "./components/TodosList";
 import { connect } from "react-redux";
 import { deleteAll, persistTodos } from "./redux/action/addTodo.action";
+import { Button } from 'react-bootstrap';
 
 const App = ({deleteAll, persistTodos}) => {
   useEffect(() => {
@@ -11,19 +13,22 @@ const App = ({deleteAll, persistTodos}) => {
   },[persistTodos]);
   return (
     <div className="App">
-      <h1 style={{ textDecoration:"underline" }}>Todos App</h1>
+      <Header />
       <InputField />
       <TodosList />
       <div>
-        <button 
+        <Button 
+          variant="danger"
           style={{ 
+            width: "100px",
+            height: "40px",
+            padding: "0",
             marginTop: "20px", 
             cursor: "pointer" }} 
             onClick={deleteAll}
           >
-            {" "}
             Delete All
-          </button>
+          </Button>
       </div>
     </div>
   );

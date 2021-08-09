@@ -1,5 +1,6 @@
 const initState = {
     todos: [],
+    title: '',
     text: '',
     selected:undefined,
 };

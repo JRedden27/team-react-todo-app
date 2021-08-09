@@ -21,7 +21,8 @@ class InputField extends React.Component {
                     type="text" 
                     name="todo" 
                     value={this.props.text}
-                    placeholder="Enter your todo..." 
+                    placeholder="Enter your to-do..." 
+                    style={{ width: "400px", margin: "25px 0" }}
                     onChange= {this.handleChange}
                 />
             </form>
