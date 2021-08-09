@@ -35,8 +35,8 @@ const Todo = ({ todo, idx, deleteTodo, editTodo, selected, text }) => {
                 </Card.Text>
             </Card.Body>
             <div style={{ margin: "10px 5px" }}>
-                <i className="bi bi-check-lg" style={{ cursor: "pointer", display: "block" }} ></i>
-                <i className="bi bi-exclamation-circle-fill" style={{ cursor: "pointer", display: "block" }} ></i>
+                {/* <i className="bi bi-check-lg" style={{ cursor: "pointer", display: "block" }} ></i>
+                <i className="bi bi-exclamation-circle-fill" style={{ cursor: "pointer", display: "block" }} ></i> */}
                 <i className="bi bi-pencil-fill" style={{ cursor: "pointer", display: "block" }} onClick={() => editTodo(idx)}></i>
                 <i className="bi bi-trash-fill" style={{ cursor: "pointer", display: "block" }} onClick={() => deleteTodo(idx)} ></i>
             </div>
